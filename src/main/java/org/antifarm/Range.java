@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2012-2013 Sean Porter <glitchkey@gmail.com>
+ * Copyright 2013 James Geboski <jgeboski@gmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,31 +17,24 @@
 
 package org.antifarm;
 
-//* IMPORTS: JDK/JRE
-	import java.io.File;
-//* IMPORTS: BUKKIT
-	import org.bukkit.plugin.java.JavaPlugin;
-//* IMPORTS: SPOUT
-	//* NOT NEEDED
-//* IMPORTS: OTHER
-	//* NOT NEEDED
+import java.util.ArrayList;
 
-public class AntiFarm extends JavaPlugin
-{
-	Configuration config;
+import org.bukkit.entity.EntityType;
 
-	public void onLoad() {
-		config = new Configuration(new File(getDataFolder(), "config.yml"));
+public class Range {
+	private static int nextId = 0;
+
+	public int id;
+	public int radius;
+	public int cooldown;
+	public int mobCount;
+
+	public ArrayList<EntityType> types;
+
+	public Range() {
+		this.id    = nextId;
+		this.types = new ArrayList<EntityType>();
+
+		nextId++;
 	}
-
-	public void onEnable() {
-		if (!config.file.exists())
-			saveResource("config.yml", false);
-
-		config.load();
-	}
-
-	public void onDisable() {}
-
-	public void onReload() {}
 }
