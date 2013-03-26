@@ -1,0 +1,44 @@
+ranges:
+  # The name of the specified range. This can be anything, and you can have
+  # as many ranges as you want.
+  default:
+    # Distance to check from the last mob that died. (Checked in a cube)
+    radius: 8
+    # Number of seconds to wait before removing the farming penalty.
+    cooldown: 600
+    # Number of mobs to wait for before applying the penalty.
+    mobCount: 5
+    # Mobs that are affected by this setting.
+    #
+    # Valid values are:
+    #   BLAZE, CAVE_SPIDER, CHICKEN, COW, CREEPER, ENDER_DRAGON, ENDERMAN, GHAST
+    #   IRON_GOLEM, MAGMA_CUBE, MUSHROOM_COW, OCELOT, PIG, PIG_ZOMBIE, SHEEP
+    #   SILVERFISH, SKELETON, SLIME, SNOWMAN, SPIDER, SQUID, VILLAGER, WITCH
+    #   WITHER, WOLF, ZOMBIE
+    mobs:
+      - BLAZE
+      - CAVE_SPIDER
+      - CHICKEN
+      - COW
+      - CREEPER
+      - ENDER_DRAGON
+      - ENDERMAN
+      - GHAST
+      - IRON_GOLEM
+      - MAGMA_CUBE
+      - MUSHROOM_COW
+      - OCELOT
+      - PIG
+      - PIG_ZOMBIE
+      - SHEEP
+      - SILVERFISH
+      - SKELETON
+      - SLIME
+      - SNOWMAN
+      - SPIDER
+      - SQUID
+      - VILLAGER
+      - WITCH
+      - WITHER
+      - WOLF
+      - ZOMBIE
