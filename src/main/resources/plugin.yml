@@ -3,5 +3,20 @@ version: ${project.version}
 description: This plugin prevents the use and abuse of mob farms.
 author: Glitchfinder 
 website: https://github.com/Glitchfinder/AntiFarm
-
 main: org.antifarm.AntiFarm
+
+commands:
+  antifarm:
+    description: Manage AntiFarm
+    aliases: ['af']
+    usage: /<command> reload
+
+permissions:
+  antifarm.antifarm:
+    description: Access the AntiFarm command
+    default: op
+  antifarm.reload:
+    description: Reload AntiFarm
+    default: op
+    children:
+      antifarm.antifarm: true

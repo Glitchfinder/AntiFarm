@@ -24,24 +24,27 @@ package org.antifarm;
 //* IMPORTS: SPOUT
 	//* NOT NEEDED
 //* IMPORTS: OTHER
-	//* NOT NEEDED
+	import org.antifarm.command.CAntiFarm;
 
 public class AntiFarm extends JavaPlugin
 {
-	Configuration config;
+	public Configuration config;
 
 	public void onLoad() {
 		config = new Configuration(new File(getDataFolder(), "config.yml"));
 	}
 
 	public void onEnable() {
+		onReload();
+		getCommand("antifarm").setExecutor(new CAntiFarm(this));
+	}
+
+	public void onDisable() {}
+
+	public void onReload() {
 		if (!config.file.exists())
 			saveResource("config.yml", false);
 
 		config.load();
 	}
-
-	public void onDisable() {}
-
-	public void onReload() {}
 }
